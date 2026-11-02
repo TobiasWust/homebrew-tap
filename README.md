@@ -3,7 +3,11 @@
 Homebrew casks by [wust](https://wust.dev).
 
 ```bash
-brew install --cask tobiaswust/tap/fnlockbar
+brew tap tobiaswust/tap && brew trust tobiaswust/tap
+```
+
+```bash
+brew install --cask fnlockbar
 ```
 
 | Cask | App |
