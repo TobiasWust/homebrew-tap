@@ -12,14 +12,16 @@ cask "fnlockbar" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "FnLockBar.app"
 
   # The app is ad-hoc signed, not notarized; without this Gatekeeper blocks the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/FnLockBar.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/FnLockBar.app"],
+        writable_paths: ["FnLockBar.app"],
+        writable_base:  :appdir
   end
 
   uninstall quit: "de.tobiaswust.FnLockBar"
