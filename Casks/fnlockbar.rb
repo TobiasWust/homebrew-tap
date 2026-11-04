@@ -1,6 +1,6 @@
 cask "fnlockbar" do
-  version "1.3.1"
-  sha256 "849ab828a9c5645905141a8b60635e137ef179ddc4d1b9d944e754a2430ad3be"
+  version "1.3.2"
+  sha256 "7a069895709bee9e7393029d4d1c976e33399b5096ed84904817830d0277c425"
 
   url "https://github.com/TobiasWust/FnLockBar/releases/download/v#{version}/FnLockBar.zip"
   name "FnLockBar"
